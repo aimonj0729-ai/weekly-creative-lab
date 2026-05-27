@@ -1,0 +1,66 @@
+{
+  "snapshot_date": "2026-05-27",
+  "theme": "AI agents, MCP, skills, browser QA, and tasteful workflow products",
+  "opportunities": [
+    {
+      "name": "Browser QA Receipt for vibe-coded apps",
+      "audience": "indie builders shipping AI-generated web apps",
+      "pain": 9,
+      "entry_ease": 8,
+      "competition_inverse": 8,
+      "taste_leverage": 8,
+      "weekly_shippability": 9,
+      "trust_safety": 9,
+      "wedge": "Open a real page, capture screenshots, console errors, broken links, mobile checks, and output a Markdown launch receipt.",
+      "first_artifact": "CLI + Claude/Codex skill"
+    },
+    {
+      "name": "Side-Alley Radar for weekly idea selection",
+      "audience": "builders who want small GitHub projects from current trends",
+      "pain": 8,
+      "entry_ease": 9,
+      "competition_inverse": 9,
+      "taste_leverage": 9,
+      "weekly_shippability": 9,
+      "trust_safety": 10,
+      "wedge": "Translate crowded hot repo categories into small, defensible weekly builds.",
+      "first_artifact": "Skill + score script + weekly report template"
+    },
+    {
+      "name": "MCP Fit Check for small teams",
+      "audience": "developers tempted to build an MCP server",
+      "pain": 7,
+      "entry_ease": 8,
+      "competition_inverse": 7,
+      "taste_leverage": 7,
+      "weekly_shippability": 8,
+      "trust_safety": 9,
+      "wedge": "A decision workflow that says whether an idea should be MCP, CLI, API, or just docs.",
+      "first_artifact": "Checklist + scoring CLI"
+    },
+    {
+      "name": "Design Taste Patch for GitHub READMEs",
+      "audience": "open-source builders with useful but bland repos",
+      "pain": 7,
+      "entry_ease": 9,
+      "competition_inverse": 6,
+      "taste_leverage": 10,
+      "weekly_shippability": 8,
+      "trust_safety": 10,
+      "wedge": "Rewrite the first screen of a README into a tasteful product door without adding AI changelog clutter.",
+      "first_artifact": "README transformation skill"
+    },
+    {
+      "name": "Vertical Skill Forge for boring industries",
+      "audience": "small service businesses and operators",
+      "pain": 8,
+      "entry_ease": 7,
+      "competition_inverse": 7,
+      "taste_leverage": 8,
+      "weekly_shippability": 7,
+      "trust_safety": 8,
+      "wedge": "Create installable skills for narrow workflows like admissions review, local ads audit, dental intake, or course operations.",
+      "first_artifact": "Skill generator template"
+    }
+  ]
+}
