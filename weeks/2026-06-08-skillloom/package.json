@@ -1,0 +1,10 @@
+{
+  "name": "skillloom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/render-skillloom.mjs sample/browser-ritual.json dist",
+    "test": "node --test"
+  }
+}

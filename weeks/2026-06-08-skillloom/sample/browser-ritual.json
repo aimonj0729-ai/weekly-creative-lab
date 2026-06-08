@@ -1,0 +1,46 @@
+{
+  "name": "Browser Ritual Receipt",
+  "slug": "browser-ritual-receipt",
+  "tagline": "Turn a browser QA pass into a polished launch card.",
+  "summary": "Skillloom packages an agent skill or workflow brief into a README hero and a glossy one-page landing card, so tiny tools can look launch-ready before they need a full website.",
+  "audience": "Indie builders shipping microsites, workflow packs, agent skills, and tiny CLIs.",
+  "signal": {
+    "trend": "Web agents, generative UI, and skill packaging are all rising at once.",
+    "sources": [
+      "awesome-web-agents",
+      "LightAgent",
+      "OpenGenerativeUI",
+      "openpencil"
+    ]
+  },
+  "palette": {
+    "ink": "#171211",
+    "accent": "#d56a33",
+    "mist": "#f7efe5",
+    "pulse": "#0f7f76"
+  },
+  "artifacts": [
+    "README hero block you can paste into a repo instantly",
+    "Editorial HTML card with product framing and tasteful layout",
+    "Compact summary JSON for other automation steps"
+  ],
+  "commands": [
+    "npm test",
+    "npm run build",
+    "open dist/index.html"
+  ],
+  "sections": [
+    {
+      "title": "Why it exists",
+      "body": "Many agent skills and workflow packs are useful but visually anonymous. Skillloom gives them a front door with almost no extra work."
+    },
+    {
+      "title": "What you ship",
+      "body": "A single manifest becomes a polished HTML page, a copy-ready README hero, and a summary file that can plug into larger publishing workflows."
+    },
+    {
+      "title": "Why this week",
+      "body": "Recent GitHub signal shows fast-moving activity around web agents, AI-native design tools, generative UI, and skill packaging. This idea sits where all four overlap."
+    }
+  ]
+}

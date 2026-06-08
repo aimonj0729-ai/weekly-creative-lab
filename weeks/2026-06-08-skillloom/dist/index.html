@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browser Ritual Receipt</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='24' fill='%23d56a33'/%3E%3Cpath d='M24 24h14l10 28 10-28h14L56 72H40L24 24z' fill='%23f7efe5'/%3E%3C/svg%3E">
+    <style>
+      :root {
+        --ink: #171211;
+        --accent: #d56a33;
+        --mist: #f7efe5;
+        --pulse: #0f7f76;
+        --panel: rgba(255, 255, 255, 0.66);
+        --edge: rgba(22, 19, 18, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(218, 107, 47, 0.22), transparent 32%),
+          radial-gradient(circle at bottom right, rgba(13, 139, 130, 0.24), transparent 28%),
+          linear-gradient(145deg, #fbf4eb 0%, #f2e6d9 52%, #f7f0e7 100%);
+      }
+
+      .shell {
+        width: min(1080px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 48px 0 72px;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 36px;
+        border: 1px solid var(--edge);
+        border-radius: 32px;
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.5));
+        box-shadow: 0 24px 80px rgba(41, 24, 18, 0.12);
+        backdrop-filter: blur(18px);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -40px -80px auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(218, 107, 47, 0.28), transparent 70%);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--pulse);
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 12ch;
+        font-size: clamp(3rem, 8vw, 5.4rem);
+        line-height: 0.92;
+      }
+
+      .tagline {
+        margin: 20px 0 0;
+        max-width: 26ch;
+        font-size: clamp(1.15rem, 2.8vw, 1.6rem);
+      }
+
+      .lede {
+        margin: 28px 0 0;
+        max-width: 60ch;
+        font-size: 1.04rem;
+        line-height: 1.7;
+      }
+
+      .signal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .signal span {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(22, 19, 18, 0.08);
+        background: rgba(255, 255, 255, 0.75);
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        font-size: 0.92rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+        margin-top: 20px;
+      }
+
+      .panel,
+      .story-card,
+      .command-bar {
+        border-radius: 24px;
+        border: 1px solid var(--edge);
+        background: var(--panel);
+        box-shadow: 0 14px 36px rgba(41, 24, 18, 0.08);
+      }
+
+      .panel {
+        grid-column: span 6;
+        padding: 24px;
+      }
+
+      .panel ul {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.7;
+      }
+
+      .story {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+
+      .story-card {
+        padding: 22px;
+      }
+
+      .story-card h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+      }
+
+      .story-card p {
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      .command-bar {
+        grid-column: 1 / -1;
+        padding: 22px;
+      }
+
+      .command-bar code {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 16px;
+        overflow-x: auto;
+        background: rgba(17, 17, 17, 0.92);
+        color: #f8f4ed;
+        font-family: "SFMono-Regular", "Menlo", monospace;
+      }
+
+      .command-bar code + code {
+        margin-top: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .hero {
+          padding: 28px 22px;
+          border-radius: 28px;
+        }
+
+        .panel {
+          grid-column: 1 / -1;
+        }
+
+        .shell {
+          width: min(100vw - 20px, 1080px);
+          padding-top: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Skillloom card</p>
+        <h1>Browser Ritual Receipt</h1>
+        <p class="tagline">Turn a browser QA pass into a polished launch card.</p>
+        <p class="lede">Skillloom packages an agent skill or workflow brief into a README hero and a glossy one-page landing card, so tiny tools can look launch-ready before they need a full website.</p>
+        <div class="signal">
+          <span>Web agents, generative UI, and skill packaging are all rising at once.</span>
+          <span>awesome-web-agents</span><span>LightAgent</span><span>OpenGenerativeUI</span><span>openpencil</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <section class="panel"><p class="eyebrow">Audience</p><ul><li>Indie builders shipping microsites, workflow packs, agent skills, and tiny CLIs.</li></ul></section>
+        <section class="panel"><p class="eyebrow">Artifacts</p><ul><li>README hero block you can paste into a repo instantly</li><li>Editorial HTML card with product framing and tasteful layout</li><li>Compact summary JSON for other automation steps</li></ul></section>
+        <div class="story"><article class="story-card">
+  <h3>Why it exists</h3>
+  <p>Many agent skills and workflow packs are useful but visually anonymous. Skillloom gives them a front door with almost no extra work.</p>
+</article><article class="story-card">
+  <h3>What you ship</h3>
+  <p>A single manifest becomes a polished HTML page, a copy-ready README hero, and a summary file that can plug into larger publishing workflows.</p>
+</article><article class="story-card">
+  <h3>Why this week</h3>
+  <p>Recent GitHub signal shows fast-moving activity around web agents, AI-native design tools, generative UI, and skill packaging. This idea sits where all four overlap.</p>
+</article></div>
+        <section class="command-bar">
+          <p class="eyebrow">Commands</p>
+          <code>npm test</code><code>npm run build</code><code>open dist/index.html</code>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

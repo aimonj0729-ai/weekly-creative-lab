@@ -19,6 +19,7 @@
 
 | Week | Project | Why It Exists |
 | --- | --- | --- |
+| 2026-06-08 | [Skillloom](weeks/2026-06-08-skillloom/) | 把 skill / workflow 说明织成有门面的 README hero 和一页式发布卡。 |
 | 2026-05-27 | [Side-Alley Radar](weeks/2026-05-27-side-alley-radar/) | 从热门 AI/agent/MCP 项目里，找小团队能直接进入的窄门机会。 |
 
 ## 🗺️ Lab 规则
@@ -38,11 +39,12 @@ git clone https://github.com/aimonj0729-ai/weekly-creative-lab.git
 cd weekly-creative-lab
 
 # 查看本周作品
-open weeks/2026-05-27-side-alley-radar/README.md
+open weeks/2026-06-08-skillloom/README.md
 
-# 跑一下本周机会评分脚本
-python3 weeks/2026-05-27-side-alley-radar/scripts/score_opportunities.py \
-  weeks/2026-05-27-side-alley-radar/opportunities.json
+# 运行本周生成器
+cd weeks/2026-06-08-skillloom
+npm test
+npm run build
 ```
 
 ## 🧭 本仓库适合放什么
@@ -61,3 +63,8 @@ python3 weeks/2026-05-27-side-alley-radar/scripts/score_opportunities.py \
 - 创建 `weekly-creative-lab`。
 - 发布第一期作品：`Side-Alley Radar`。
 - 本周方向：从 AI agent、MCP、skills、浏览器 QA 等热点里寻找小团队可切入的窄门项目。
+
+### 2026-06-08
+
+- 发布第二期作品：`Skillloom`。
+- 本周方向：把 skill / workflow 做成更像产品门面的 README hero 和单页卡片。
