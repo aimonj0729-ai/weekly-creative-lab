@@ -1,0 +1,11 @@
+{
+  "name": "browser-ritual-receipt",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/run-browser-ritual.mjs sample/velvet-arcade.html dist",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage"
+  }
+}

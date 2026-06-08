@@ -1,0 +1,22 @@
+{
+  "label": "velvet-arcade",
+  "source": "sample/velvet-arcade.html",
+  "overall": 100,
+  "grade": "A",
+  "ctas": [
+    "Contact",
+    "Start free",
+    "Watch demo",
+    "Book walkthrough"
+  ],
+  "trustLinks": [
+    "Pricing",
+    "Contact",
+    "Privacy",
+    "Terms",
+    "Docs"
+  ],
+  "findings": [
+    "Strong launch surface. The page already reads like something that can be shown publicly."
+  ]
+}

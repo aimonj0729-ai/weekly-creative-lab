@@ -15,10 +15,11 @@
 > **项目定位**
 > 这是一个每周更新的 GitHub 创意实验室。它不追求一次做很大，而是每周做一个“小而完整、有审美、有切入口”的项目单元：skill、工作流、脚本、agent playbook、前端 demo 或 README-driven product 都可以。
 
-## 🧃 本周新作品
+## 🧃 最近作品
 
 | Week | Project | Why It Exists |
 | --- | --- | --- |
+| 2026-06-08 | [Browser Ritual Receipt](weeks/2026-06-08-browser-ritual-receipt/) | 给公开页面生成一张发布前 launch receipt，检查 CTA、分享卡和信任信号。 |
 | 2026-06-08 | [Skillloom](weeks/2026-06-08-skillloom/) | 把 skill / workflow 说明织成有门面的 README hero 和一页式发布卡。 |
 | 2026-05-27 | [Side-Alley Radar](weeks/2026-05-27-side-alley-radar/) | 从热门 AI/agent/MCP 项目里，找小团队能直接进入的窄门机会。 |
 
@@ -39,10 +40,10 @@ git clone https://github.com/aimonj0729-ai/weekly-creative-lab.git
 cd weekly-creative-lab
 
 # 查看本周作品
-open weeks/2026-06-08-skillloom/README.md
+open weeks/2026-06-08-browser-ritual-receipt/README.md
 
 # 运行本周生成器
-cd weeks/2026-06-08-skillloom
+cd weeks/2026-06-08-browser-ritual-receipt
 npm test
 npm run build
 ```
@@ -68,3 +69,8 @@ npm run build
 
 - 发布第二期作品：`Skillloom`。
 - 本周方向：把 skill / workflow 做成更像产品门面的 README hero 和单页卡片。
+
+### 2026-06-08（follow-up）
+
+- 发布第三期作品：`Browser Ritual Receipt`。
+- 本周方向：把 landing page / README-driven product 的发布前检查，做成一张可留档的轻量 receipt。
