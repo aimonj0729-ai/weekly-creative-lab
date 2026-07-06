@@ -19,6 +19,7 @@
 
 | Week | Project | Why It Exists |
 | --- | --- | --- |
+| 2026-07-06 | [Approval Atlas](weeks/2026-07-06-approval-atlas/) | 把 agent / MCP 的能力面翻译成一张可审、可发、可留档的审批地图。 |
 | 2026-06-08 | [Browser Ritual Receipt](weeks/2026-06-08-browser-ritual-receipt/) | 给公开页面生成一张发布前 launch receipt，检查 CTA、分享卡和信任信号。 |
 | 2026-06-08 | [Skillloom](weeks/2026-06-08-skillloom/) | 把 skill / workflow 说明织成有门面的 README hero 和一页式发布卡。 |
 | 2026-05-27 | [Side-Alley Radar](weeks/2026-05-27-side-alley-radar/) | 从热门 AI/agent/MCP 项目里，找小团队能直接进入的窄门机会。 |
@@ -40,10 +41,10 @@ git clone https://github.com/aimonj0729-ai/weekly-creative-lab.git
 cd weekly-creative-lab
 
 # 查看本周作品
-open weeks/2026-06-08-browser-ritual-receipt/README.md
+open weeks/2026-07-06-approval-atlas/README.md
 
 # 运行本周生成器
-cd weeks/2026-06-08-browser-ritual-receipt
+cd weeks/2026-07-06-approval-atlas
 npm test
 npm run build
 ```
@@ -74,3 +75,8 @@ npm run build
 
 - 发布第三期作品：`Browser Ritual Receipt`。
 - 本周方向：把 landing page / README-driven product 的发布前检查，做成一张可留档的轻量 receipt。
+
+### 2026-07-06
+
+- 发布第四期作品：`Approval Atlas`。
+- 本周方向：把 agent / MCP 的工具面和审批边界做成一页式 atlas，适合 review、归档和发布说明。

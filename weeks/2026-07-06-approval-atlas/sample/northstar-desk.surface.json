@@ -1,0 +1,62 @@
+{
+  "product": {
+    "name": "Northstar Desk",
+    "tagline": "A small operator console for scouting ideas, drafting copy, and shipping tiny releases.",
+    "operator": "solo builder"
+  },
+  "surfaces": [
+    {
+      "name": "searchRepos",
+      "label": "Search GitHub Repos",
+      "kind": "tool",
+      "stage": "discover",
+      "permissions": ["network", "read"],
+      "approval": "none",
+      "touches": ["public-web"],
+      "intent": "Scan live repo signals before deciding what to build."
+    },
+    {
+      "name": "draftREADME",
+      "label": "Draft README Copy",
+      "kind": "prompt",
+      "stage": "compose",
+      "permissions": ["read"],
+      "approval": "review",
+      "touches": ["workspace"],
+      "intent": "Turn notes into a first-pass project story."
+    },
+    {
+      "name": "publishWeek",
+      "label": "Publish Weekly Drop",
+      "kind": "tool",
+      "stage": "ship",
+      "permissions": ["write", "network"],
+      "approval": "required",
+      "touches": ["github", "workspace"],
+      "intent": "Commit changes and push the new weekly artifact."
+    },
+    {
+      "name": "cleanupDrafts",
+      "label": "Cleanup Draft Files",
+      "kind": "tool",
+      "stage": "cleanup",
+      "permissions": ["write", "exec"],
+      "approval": "required",
+      "touches": ["filesystem"],
+      "destructive": true,
+      "intent": "Remove temporary exports and generated scratch files."
+    }
+  ],
+  "signals": [
+    {
+      "label": "mcp-use/inspector",
+      "url": "https://github.com/mcp-use/inspector",
+      "note": "Modern MCP Inspector for remote MCP servers with Apps SDK support."
+    },
+    {
+      "label": "GitHub June 2026 roundup",
+      "url": "https://github.com/resources/insights/enterprise-content-roundup-june-26",
+      "note": "Agentic delivery is becoming more governed and operational."
+    }
+  ]
+}

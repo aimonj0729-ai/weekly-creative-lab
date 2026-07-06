@@ -1,0 +1,11 @@
+{
+  "name": "approval-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/run-approval-atlas.mjs sample/northstar-desk.surface.json dist",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage"
+  }
+}

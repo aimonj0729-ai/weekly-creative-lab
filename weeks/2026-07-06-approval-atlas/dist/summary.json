@@ -1,0 +1,13 @@
+{
+  "product": "Northstar Desk",
+  "posture": "Guarded",
+  "surfaceCount": 4,
+  "gatedCount": 3,
+  "destructiveCount": 1,
+  "unguardedHighRiskCount": 0,
+  "highestRisk": "Cleanup Draft Files",
+  "hotspotLabels": [
+    "Cleanup Draft Files",
+    "Publish Weekly Drop"
+  ]
+}
