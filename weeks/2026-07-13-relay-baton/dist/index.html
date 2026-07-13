@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relay Baton</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111818'/%3E%3Cpath d='M18 38c0-7 5-12 12-12h16v6H30c-4 0-6 2-6 6s2 6 6 6h16v6H30c-7 0-12-5-12-12Z' fill='%23d97a43'/%3E%3Ccircle cx='46' cy='32' r='6' fill='%2379d0c3'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1112;
+        --panel: rgba(18, 28, 30, 0.82);
+        --line: rgba(121, 208, 195, 0.22);
+        --text: #f5f1e8;
+        --muted: #b7b2a9;
+        --accent: #d97a43;
+        --mint: #79d0c3;
+        --hot: #f39c6b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(217, 122, 67, 0.18), transparent 32%),
+          radial-gradient(circle at top right, rgba(121, 208, 195, 0.15), transparent 28%),
+          linear-gradient(160deg, #071012 0%, #0d1718 44%, #12181a 100%);
+      }
+
+      main {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 48px;
+      }
+
+      .hero,
+      .panel {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      }
+
+      .hero {
+        border-radius: 28px;
+        padding: 28px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -8% -40% 54%;
+        height: 240px;
+        background: radial-gradient(circle, rgba(121, 208, 195, 0.24), transparent 58%);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--mint);
+        font-size: 12px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 5vw, 4.8rem);
+        line-height: 0.92;
+        max-width: 720px;
+      }
+
+      .lede {
+        margin-top: 18px;
+        max-width: 720px;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .baton-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .metric {
+        border-radius: 18px;
+        border: 1px solid rgba(245, 241, 232, 0.08);
+        background: rgba(245, 241, 232, 0.04);
+        padding: 14px 16px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.15rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        border-radius: 24px;
+        padding: 22px;
+      }
+
+      .lane-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .lane-card,
+      .spotlist li,
+      .blockers li {
+        border-radius: 20px;
+        border: 1px solid rgba(245, 241, 232, 0.08);
+        background: rgba(245, 241, 232, 0.03);
+        padding: 16px;
+      }
+
+      .lane-card ul,
+      .spotlist,
+      .blockers,
+      .packet,
+      .chips {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .lane-card li,
+      .spotlist li,
+      .blockers li {
+        display: grid;
+        gap: 6px;
+      }
+
+      .lane-card li + li,
+      .spotlist li + li,
+      .blockers li + li {
+        margin-top: 12px;
+      }
+
+      .lane-card span,
+      .lane-card em,
+      .spotlist span,
+      .blockers span,
+      .chip span {
+        color: var(--muted);
+        font-style: normal;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .chip {
+        min-width: 148px;
+        border-radius: 999px;
+        padding: 12px 14px;
+        border: 1px solid rgba(245, 241, 232, 0.08);
+        background: rgba(245, 241, 232, 0.03);
+      }
+
+      .chip.pass {
+        border-color: rgba(121, 208, 195, 0.38);
+      }
+
+      .chip.watch {
+        border-color: rgba(217, 122, 67, 0.38);
+      }
+
+      .chip.fail {
+        border-color: rgba(243, 156, 107, 0.52);
+      }
+
+      .packet {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .packet li {
+        border-left: 2px solid var(--mint);
+        padding-left: 12px;
+        color: var(--muted);
+      }
+
+      .note {
+        margin-top: 18px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: rgba(121, 208, 195, 0.08);
+        border: 1px solid rgba(121, 208, 195, 0.18);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 860px) {
+        .grid,
+        .lane-grid,
+        .baton-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Relay Baton</p>
+        <h1>Studio Weave</h1>
+        <p class="lede">Friday handoff pack for a README-first AI micro-tool.</p>
+        <div class="baton-strip">
+          <div class="metric"><span>Momentum</span><strong>In motion</strong></div>
+          <div class="metric"><span>Holder</span><strong>Verifier</strong></div>
+          <div class="metric"><span>Next</span><strong>Publisher</strong></div>
+          <div class="metric"><span>Active Stage</span><strong>Verify Artifacts</strong></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <p class="eyebrow">Route Map</p>
+          <div class="lane-grid"><article class="lane-card"><p class="eyebrow">Capture</p><ul><li><strong>Capture Brief</strong><span>Done</span><em>No gate</em></li></ul></article><article class="lane-card"><p class="eyebrow">Build</p><ul><li><strong>Build Artifact</strong><span>Done</span><em>No gate</em></li></ul></article><article class="lane-card"><p class="eyebrow">Verify</p><ul><li><strong>Verify Artifacts</strong><span>Active</span><em>Review gate</em></li></ul></article><article class="lane-card"><p class="eyebrow">Ship</p><ul><li><strong>Publish to Main</strong><span>Queued</span><em>Approval required</em></li></ul></article></div>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Checks</p>
+          <ul class="chips"><li class="chip pass"><strong>Node tests</strong><span>Pass</span></li><li class="chip pass"><strong>Coverage floor</strong><span>Pass</span></li><li class="chip watch"><strong>README lead</strong><span>Watch</span></li></ul>
+          <p class="eyebrow" style="margin-top: 22px;">Handoff Packet</p>
+          <ul class="packet"><li>README.md</li><li>dist/index.html</li><li>dist/summary.json</li></ul>
+          <div class="note">Verification is nearly done. Keep the README lead product-first, leave the update notes in the appendix, then push.</div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <p class="eyebrow">Pressure Points</p>
+          <ul class="spotlist"><li><strong>Publish to Main</strong><span>pressure 9</span><p>Queued · Approval required</p></li><li><strong>Verify Artifacts</strong><span>pressure 7</span><p>Active · Review gate</p></li></ul>
+        </article>
+
+        <article class="panel">
+          <p class="eyebrow">Blockers</p>
+          <ul class="blockers"><li><strong>Push gate still pending</strong><span>Watch</span><p>Wait for the verification pass before publishing.</p></li></ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

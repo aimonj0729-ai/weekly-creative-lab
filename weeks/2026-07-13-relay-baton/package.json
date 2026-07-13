@@ -1,0 +1,11 @@
+{
+  "name": "relay-baton",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/run-relay-baton.mjs sample/studio-weave.baton.json dist",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage"
+  }
+}

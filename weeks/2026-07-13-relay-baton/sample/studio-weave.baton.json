@@ -1,0 +1,127 @@
+{
+  "project": {
+    "name": "Studio Weave",
+    "tagline": "Friday handoff pack for a README-first AI micro-tool.",
+    "operator": "solo launch desk",
+    "objective": "Ship a polished weekly drop without losing context between discovery, build, review, and publish."
+  },
+  "baton": {
+    "status": "moving",
+    "holder": "Verifier",
+    "next": "Publisher",
+    "handoffWindow": "Today before 18:00",
+    "promise": "Every handoff should preserve the brief, risks, proof, and next action."
+  },
+  "signals": [
+    {
+      "label": "OpenHands",
+      "url": "https://github.com/OpenHands/OpenHands",
+      "note": "Open-source AI-driven development platform."
+    },
+    {
+      "label": "browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "note": "Browser agents are still compounding fast."
+    },
+    {
+      "label": "Mastra",
+      "url": "https://github.com/mastra-ai/mastra",
+      "note": "Frameworks are packaging agents and workflows as products."
+    },
+    {
+      "label": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "note": "Workflow automation is converging with AI agents."
+    }
+  ],
+  "stages": [
+    {
+      "name": "capture-brief",
+      "label": "Capture Brief",
+      "lane": "capture",
+      "owner": "Scout",
+      "status": "done",
+      "goal": "Turn public repo signals into one small shippable direction.",
+      "input": "Live GitHub repo scan",
+      "output": "Candidate table and selected wedge",
+      "tools": ["GitHub search", "README review"],
+      "approval": "none",
+      "risk": "low",
+      "note": "Relay Baton won on novelty and publishability."
+    },
+    {
+      "name": "build-artifact",
+      "label": "Build Artifact",
+      "lane": "build",
+      "owner": "Maker",
+      "status": "done",
+      "goal": "Generate a polished handoff pack from one manifest.",
+      "input": "Chosen concept and sample manifest",
+      "output": "README, renderer, dist outputs",
+      "tools": ["Node.js", "built-in test runner"],
+      "approval": "none",
+      "risk": "medium",
+      "note": "Keep the scope small and the outputs commit-friendly."
+    },
+    {
+      "name": "verify-artifacts",
+      "label": "Verify Artifacts",
+      "lane": "verify",
+      "owner": "Verifier",
+      "status": "active",
+      "goal": "Confirm tests, coverage, README lead, and dist outputs.",
+      "input": "Generated files",
+      "output": "Green verification bundle",
+      "tools": ["node --test", "coverage", "local HTTP smoke"],
+      "approval": "review",
+      "risk": "medium",
+      "note": "Keep the lead product-first and push notes to the appendix."
+    },
+    {
+      "name": "publish-main",
+      "label": "Publish to Main",
+      "lane": "ship",
+      "owner": "Publisher",
+      "status": "queued",
+      "goal": "Commit the weekly drop and push origin/main.",
+      "input": "Verified artifact set",
+      "output": "Live GitHub update",
+      "tools": ["git commit", "git push"],
+      "approval": "required",
+      "risk": "high",
+      "note": "Only after verification is green."
+    }
+  ],
+  "checks": [
+    {
+      "label": "Node tests",
+      "status": "pass",
+      "note": "Core scoring and renderers are covered."
+    },
+    {
+      "label": "Coverage floor",
+      "status": "pass",
+      "note": "Coverage should stay above 80%."
+    },
+    {
+      "label": "README lead",
+      "status": "watch",
+      "note": "Top stays product-first; update log lives in the appendix."
+    }
+  ],
+  "blockers": [
+    {
+      "label": "Push gate still pending",
+      "severity": "watch",
+      "owner": "Publisher",
+      "note": "Wait for the verification pass before publishing."
+    }
+  ],
+  "handoff": {
+    "from": "Verifier",
+    "to": "Publisher",
+    "ask": "Review the generated outputs, confirm the diff is clean, and push the weekly drop.",
+    "packet": ["README.md", "dist/index.html", "dist/summary.json"],
+    "nextMessage": "Verification is nearly done. Keep the README lead product-first, leave the update notes in the appendix, then push."
+  }
+}

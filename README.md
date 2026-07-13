@@ -19,6 +19,7 @@
 
 | Week | Project | Why It Exists |
 | --- | --- | --- |
+| 2026-07-13 | [Relay Baton](weeks/2026-07-13-relay-baton/) | 把多角色或多 agent 的交接瞬间，整理成可发、可审、可继续接力的一页式 handoff pack。 |
 | 2026-07-06 | [Approval Atlas](weeks/2026-07-06-approval-atlas/) | 把 agent / MCP 的能力面翻译成一张可审、可发、可留档的审批地图。 |
 | 2026-06-08 | [Browser Ritual Receipt](weeks/2026-06-08-browser-ritual-receipt/) | 给公开页面生成一张发布前 launch receipt，检查 CTA、分享卡和信任信号。 |
 | 2026-06-08 | [Skillloom](weeks/2026-06-08-skillloom/) | 把 skill / workflow 说明织成有门面的 README hero 和一页式发布卡。 |
@@ -41,10 +42,10 @@ git clone https://github.com/aimonj0729-ai/weekly-creative-lab.git
 cd weekly-creative-lab
 
 # 查看本周作品
-open weeks/2026-07-06-approval-atlas/README.md
+open weeks/2026-07-13-relay-baton/README.md
 
 # 运行本周生成器
-cd weeks/2026-07-06-approval-atlas
+cd weeks/2026-07-13-relay-baton
 npm test
 npm run build
 ```
@@ -80,3 +81,8 @@ npm run build
 
 - 发布第四期作品：`Approval Atlas`。
 - 本周方向：把 agent / MCP 的工具面和审批边界做成一页式 atlas，适合 review、归档和发布说明。
+
+### 2026-07-13
+
+- 发布第五期作品：`Relay Baton`。
+- 本周方向：把多角色或多 agent 的交接状态整理成一份可继续接力的 handoff pack，而不是再做一层更重的 orchestration。

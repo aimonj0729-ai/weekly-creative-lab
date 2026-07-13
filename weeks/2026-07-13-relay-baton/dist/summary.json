@@ -1,0 +1,17 @@
+{
+  "project": "Studio Weave",
+  "batonStatus": "moving",
+  "holder": "Verifier",
+  "next": "Publisher",
+  "activeStage": "Verify Artifacts",
+  "stageCount": 4,
+  "blockedCount": 0,
+  "pendingApprovals": 2,
+  "failingChecks": 0,
+  "watchChecks": 1,
+  "readyToShip": false,
+  "hotspotLabels": [
+    "Publish to Main",
+    "Verify Artifacts"
+  ]
+}
